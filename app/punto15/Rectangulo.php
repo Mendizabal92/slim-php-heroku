@@ -1,7 +1,7 @@
 <?php 
 
 
-class Rectangulo extends index
+class Rectangulo extends ClaseAbstracta
 {
 
     private $_ladoUno;
