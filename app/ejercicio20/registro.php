@@ -9,8 +9,9 @@ $miUsuario->mail=$_POST["mail"];
 //var_dump($miUsuario);
 
 if (Usuario::ValidarUsuario($miUsuario) == "OK") {
-    var_dump($miUsuario);
+    //var_dump($miUsuario);
     Usuario::Alta($miUsuario);
+    echo "se guardo correctamente";
 }
 else{
     echo "no se guardo";
