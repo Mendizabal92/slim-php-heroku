@@ -1,7 +1,7 @@
 <?php 
 
 
-class Rectangulo extends ClaseAbstracta
+class Rectangulo extends FiguraGeometrica
 {
 
     private $_ladoUno;
@@ -15,13 +15,24 @@ class Rectangulo extends ClaseAbstracta
 
     public function CalcularDatos()
     {
-
-
+        $this->_superficie= $this->_ladoUno*$this->_ladoDos;
+        $this->_perimetro= ($this->_ladoUno*2) + ($this->_ladoDos*2);
     }
 
+    public function ToString()
+    {
+        echo "El perimetro es: $this->_perimetro<br>Superficie: $this->_superficie<br>El Primer lado mide: $this->_ladoUno<br>el Segundo mide: $this->_ladoDos<br>El color es: $this->_color";
+    }
 
-
-
+    public function Dibujar()
+    {
+        for ($i=0; $i < $this->_ladoDos; $i++) { 
+            for ($j=0; $j < $this->_ladoUno; $j++) { 
+                echo "*";
+            }
+            echo "<br>";
+        }
+    }
 
 
 
