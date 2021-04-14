@@ -29,7 +29,7 @@ class Usuario
         public static function Alta($user)
         {
             $resultado= FALSE;
-			$archivo=fopen("./usuarios.csv", "a");
+			$archivo=fopen("usuarios.csv", "a");
 			$renglon=$user->nombre."\n".$user->clave."\n".$user->mail."\n";
 			$cant=fwrite($archivo,$renglon);
 			
