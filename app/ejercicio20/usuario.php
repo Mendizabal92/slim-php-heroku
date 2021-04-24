@@ -8,7 +8,7 @@ class Usuario
 
     public function __construct($nombre=null,$clave=null,$mail=null)
     {
-        if($nombre !=null && $clave!=null && $mail=null)
+        if($nombre !=null && $clave!=null && $mail!=null)
         {
             $this->nombre=$nombre;
             $this->clave=$clave;
@@ -19,7 +19,7 @@ class Usuario
 
     public function ToString()
     {
-        return $this->nombre."-".$this->clave."-".$this->mail;
+        return $this->nombre."\n".$this->clave."\n".$this->mail."\n";
     }
 
 
@@ -48,7 +48,7 @@ class Usuario
             $resultado= FALSE;
 			$archivo=fopen("./usuarios.csv", "a");
 			//$renglon=$user->nombre."\n".$user->clave."\n".$user->mail."\n";
-			$cant=fwrite($archivo,$obj->ToString());
+			$cant=fwrite($archivo,$user->ToString());
 			
 			if ($cant > 0) 
 			{
