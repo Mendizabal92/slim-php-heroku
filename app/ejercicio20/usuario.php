@@ -6,6 +6,23 @@ class Usuario
     public $clave;
     public $mail;
 
+    public function __construct($nombre=null,$clave=null,$mail=null)
+    {
+        if($nombre !=null && $clave!=null && $mail=null)
+        {
+            $this->nombre=$nombre;
+            $this->clave=$clave;
+            $this->mail=$mail;
+        }
+
+    }
+
+    public function ToString()
+    {
+        return $this->nombre."-".$this->clave."-".$this->mail;
+    }
+
+
    static function ValidarUsuario(Usuario $unUsuario)
     {
         $estado=null;
@@ -30,8 +47,8 @@ class Usuario
         {
             $resultado= FALSE;
 			$archivo=fopen("./usuarios.csv", "a");
-			$renglon=$user->nombre."\n".$user->clave."\n".$user->mail."\n";
-			$cant=fwrite($archivo,$renglon);
+			//$renglon=$user->nombre."\n".$user->clave."\n".$user->mail."\n";
+			$cant=fwrite($archivo,$obj->ToString());
 			
 			if ($cant > 0) 
 			{

@@ -8,13 +8,13 @@ $miUsuario->mail=$_POST["mail"];
 //Usuario::Alta($miUsuario);
 //var_dump($miUsuario);
 
-if (Usuario::ValidarUsuario($miUsuario) == "OK") {
+if (!Usuario::ValidarUsuario($miUsuario)) {
+    echo "no se guardo";
+}
+else{
     var_dump($miUsuario);
     Usuario::Alta($miUsuario);
     echo "se guardo correctamente";
-}
-else{
-    echo "no se guardo";
 }
 
 
